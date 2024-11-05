@@ -1,8 +1,8 @@
 CC = gcc
 DEFINES =
 DEBUG = -g
-CFLAGS = $(DEFINES) $(DEBUG) -Wall -Wextra -Wshadow -Wunreachable-code -Wredundant-decls -Wmissing-declarations -Wold-style-definition -Wmissing-prototypes -Wdeclaration-after-statement -Wno-return-local-addr -Wunsafe-loop-optimizations -Wuninitialized -Werror
-SRC = caesar.c xor.c
+CFLAGS = $(DEFINES) $(DEBUG) -Wall -Wextra -Wshadow -Wunreachable-code -Wredundant-decls -Wmissing-declarations -Wold-style-definition -Wmissing-prototypes -Wdeclaration-after-statement -Wno-return-local-addr  -Wuninitialized #-Werror
+SRC = caesar.c #xor.c
 OBJ = $(SRC:.c=.o)
 
 COMMENT = "This is a comment"
@@ -11,7 +11,7 @@ COMMENT = "This is a comment"
 # PROG2 = xor
 # PROGS = $(PROG1) $(PROG2)
 
-all: caesar xor
+all: caesar #xor
 
 # all : caesar xor
 caesar: caesar.o
@@ -20,7 +20,7 @@ caesar: caesar.o
 xor: xor.o
 	$(CC) $(CFLAGS) -o xor xor.o
 
-	
+
 %.o: %.c
 	$(CC) $(CFLAGS) $< -c -o $@
 
